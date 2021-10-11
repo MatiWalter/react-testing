@@ -6,8 +6,9 @@ import { Provider } from 'react-redux';
 import { store } from '../../redux/store';
 
 describe('test register', () => {
-
-  beforeEach(() => {
+  
+  test('rendering and submitting a basic Formik form', async () => {
+    
     act(() => {
       render(
         <Provider store={store}>
@@ -15,10 +16,7 @@ describe('test register', () => {
         </Provider>
       );
     })
-  })
-  
-  test('rendering and submitting a basic Formik form', async () => {
-  
+
     fireEvent.blur(screen.getByRole('textbox', { name: /email/i }));
     fireEvent.blur(screen.getByTestId('passwordInput'));
     fireEvent.blur(screen.getByTestId('confirmPassword'));
@@ -38,7 +36,6 @@ describe('test register', () => {
       name: /submit/i
     });
 
-    fireEvent.click(button);
   });
 
 })

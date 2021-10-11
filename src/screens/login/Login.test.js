@@ -14,7 +14,7 @@ test('rendering and submitting a basic Formik form', async () => {
       </Provider>
     );
   })
-
+    
   fireEvent.blur(screen.getByRole('textbox', { name: /email/i }));
   fireEvent.blur(screen.getByLabelText(/contraseña/i));
 
